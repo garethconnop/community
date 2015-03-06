@@ -1,0 +1,7 @@
+- if @post.user == current_user
+  = link_to "Edit", edit_post_path(@post)
+
+//avatar to go here
+
+%h1= @post.title
+%p= @post.comment
