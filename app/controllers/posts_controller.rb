@@ -7,8 +7,6 @@ class PostsController < ApplicationController
 
 	def show
 	end
-		
-	end
 
 	def new
 		@post = Post.new
