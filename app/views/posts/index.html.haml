@@ -2,6 +2,7 @@
   //avatar to go here
   %h2= post.title
   %p= time_ago_in_words(post.created_at)
-  ago
+  ago by
+  = post.user.email
 
 = link_to "New Post", new_post_path
