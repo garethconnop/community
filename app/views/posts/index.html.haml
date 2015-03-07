@@ -1,5 +1,6 @@
 - @posts.each do |post|
   //avatar to go here
+  = image_tag post.user.avatar.url(:thumb)
   %h2= post.title
   %p
     = time_ago_in_words(post.created_at)

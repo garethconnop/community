@@ -13,6 +13,7 @@ gem 'haml', '~> 4.0.6'
 gem 'simple_form', '~> 3.1.0'
 gem 'devise', '~> 3.4.1'
 gem 'will_paginate', '~> 3.0.7'
+gem 'paperclip', '~> 4.2.1'
 
 group :development, :test do
   gem 'byebug'
