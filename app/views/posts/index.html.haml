@@ -1,8 +1,11 @@
 - @posts.each do |post|
   //avatar to go here
   %h2= post.title
-  %p= time_ago_in_words(post.created_at)
-  ago by
-  = post.user.email
+  %p
+    = time_ago_in_words(post.created_at)
+    ago by
+    = post.user.first_name
+    = post.user.last_name
+    = post.user.username
 
 = link_to "New Post", new_post_path
