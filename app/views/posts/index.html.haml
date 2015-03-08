@@ -1,3 +1,7 @@
+= link_to "All", root_path
+- Category.all.each do |category|
+  = link_to category.name, posts_path(category: category.name)
+
 - if user_signed_in?
   = link_to "New Post", new_post_path
 

@@ -16,14 +16,6 @@
 
   //add category here
 
-%h2
-  - if @post.comments.count == 1 
-    = @post.comments.count
-    %span Reply
-  - else
-    = @post.comments.count
-    %span Replies
-
 %p= @post.content
 
 %h2
@@ -39,10 +31,6 @@
 = render @post.comments
 
 %h3 Add a Reply
-
-%hr
-
-= image_tag current_user.avatar.url(:thumb)
 
 = render "comments/form"
 
