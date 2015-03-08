@@ -1,4 +1,8 @@
+= link_to "Back to Forum", root_path
+
 %h1 Edit Post
+
+= image_tag @post.user.avatar.url(:thumb)
 
 = render 'form'
 
