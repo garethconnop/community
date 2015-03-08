@@ -5,9 +5,11 @@
   = image_tag post.user.avatar.url(:thumb)
   %h2= link_to post.title, post
   %p
+    Posted
     = time_ago_in_words(post.created_at)
     ago by
     = post.user.username
+    in
 
   //category to go here
 
