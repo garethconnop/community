@@ -1,5 +1,6 @@
 = simple_form_for @post do |f|
   = f.input :title
+  = f.collection_select :category_id, Category.all, :id, :name, {prompt: "Choose a Category"}
   //= f.select :category
   = f.input :content
   = f.submit "Submit"
