@@ -1,5 +1,12 @@
 = simple_form_for @post do |f|
-  = f.input :title
+
+  = f.label :title
+  = f.text_field :title, autofocus: true
+
+  = f.label :category_id
   = f.collection_select :category_id, Category.all, :id, :name, {prompt: "Choose a Category"}
-  = f.input :content
+
+  = f.label :content
+  = f.text_area :content
+
   = f.submit "Submit"

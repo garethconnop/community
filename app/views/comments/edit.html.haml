@@ -1,5 +1,8 @@
 %h1 Edit Reply
 
 = simple_form_for([@post, @comment]) do |f|
-  = f.input :comment
+
+  = f.label :comment
+  = f.text_area :comment
+  
   = f.submit "Reply"
