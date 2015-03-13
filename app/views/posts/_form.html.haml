@@ -1,5 +1,14 @@
 = simple_form_for @post do |f|
 
+  - if @post.errors.any?
+    %h2
+      = pluralize(@post.errors.count, "error")
+      prohibited this mark from being saved:
+    %ul
+      - @post.errors.full_messages.each do |message|
+        %li
+          = message
+
   = f.label :title
   = f.text_field :title, autofocus: true
 

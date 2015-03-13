@@ -1,0 +1,352 @@
+// Global
+
+html, body {
+  position: relative;
+  display: table; // For sticky footer
+  height: 100%; // For sticky footer
+  width: 100%; // For sticky footer
+}
+  
+
+//	Typography
+
+.huge, .large, .bigger, .big, 
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+h2, h3, h4, h5, h6 {
+  color: $headline-color;
+  font-weight: 400;
+}
+
+.huge, h1 {
+  font-size: 5.714em;
+  line-height: 1.05;
+  font-weight: 900;
+  letter-spacing: 0.02em;
+  color: #FFF;
+}
+
+.large, h2 {
+  font-size: 2.143em;
+  line-height: 1.10;
+}
+
+.bigger, h3 {
+  font-size: 1.857em;
+  line-height: 1.38;
+}
+
+.big, h4 {
+  font-size: 1.571em;
+  line-height: 1.38;
+}
+
+.small, small { 
+  font-size: 0.714em;
+  line-height: 1.2;
+}
+
+img {
+  max-width: 100%;
+  height: auto !important;
+}
+
+p {
+  margin: 0 0 20px 0;
+}
+
+em {
+  font-style: italic;
+}
+
+strong {
+  font-weight: bold;
+}
+
+hr {
+  border: solid #E9E9E9;
+  border-width: 1px 0 0;
+  clear: both;
+  height: 0;
+}
+
+address {
+  font-style: normal;
+}
+
+
+
+// Links
+
+a {
+  color: $link-color;
+  text-decoration: none;
+  outline: 0;
+  @include transition($duration/2 ease);
+}
+
+a:hover, a:focus {
+  color: $link-color-hover;
+}
+
+
+
+// Selection colors (easy to forget)
+
+::selection {
+  background: $selection-color;
+}
+  
+::-moz-selection {
+  background: $selection-color;
+}
+  
+img::selection {
+  background: transparent;
+}
+  
+img::-moz-selection {
+  background: transparent;
+}
+  
+body {
+  -webkit-tap-highlight-color: transparent;
+}
+
+
+
+// Basic Styles
+
+body {
+  background: #f4f4f4;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.6;
+  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: $text-color;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+}
+
+.wrapper {
+  height: auto; // For sticky footer
+}
+
+.main-content {
+  margin: 90px 0 40px;
+
+  @media only screen and (min-width: 1024px) {
+    margin-top: 105px;
+  }
+}
+
+
+
+// Input Styles
+
+input, textarea {
+  -webkit-appearance: none;
+  border: 1px solid #DFDFDF;
+  @include placeholder {
+    color: $placeholder-color;
+  }
+  width: 100%;
+}
+
+input[type=text] {
+  padding: 8px 16px;
+  color: $text-color;
+  height: 46px;
+  display: block;
+  outline: none;
+  border-radius: 2px;
+
+  &:-webkit-autofill, &:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0 50px white inset;
+    -webkit-text-fill-color: $text-color;
+  }
+}
+
+textarea {
+  padding: 8px 16px;
+  color: $text-color;
+  display: block;
+  outline: none;
+  border-radius: 2px;
+  
+  &:-webkit-autofill, &:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0 50px white inset;
+    -webkit-text-fill-color: $text-color;
+  }
+}
+
+select {
+  background: $primary-color;
+  border: none;
+  border-radius: 2px;
+  outline: none;
+  color: #FFF;
+  letter-spacing: .1em;
+  padding: 2px 8px;
+  margin: 5px 0 0 0;
+  -webkit-appearance: none;
+  cursor: pointer;
+
+  &:-webkit-autofill, &:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0 50px white inset;
+    -webkit-text-fill-color: $text-color;
+    outline: none;
+  }
+}
+
+input[type=submit] {
+  height: 46px;
+  display: block;
+  outline: none;
+  border: none;
+  border-radius: 2px;
+  padding: 0;
+  -webkit-appearance: none;
+  font-size: 1.1em;
+  font-weight: 700;
+  color: #FFF;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: $accent-color;
+  @include transition($duration/2 ease);
+
+  &:hover, &:focus {
+    background: lighten($accent-color, 3%);
+  }
+}
+
+.hide {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+}
+
+
+
+
+// Table Styles
+
+
+
+// Buttons
+
+button, a.button {
+  margin-top: 20px;
+  padding: 13px 24px;
+  background: $primary-color;
+  border: none;
+  border-radius: 2px;
+  outline: none;
+  color: #FFF;
+  font-size: 1.1em;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  @include transition($duration/2 ease);
+
+  &:hover, &:focus {
+    background: $accent-color;
+  }
+}
+
+
+
+
+// Cookie Banner
+
+.cookie-banner {
+  position: fixed;
+  z-index: 3;
+  background: #222;
+  width: 100%;
+  top: 0;
+  left: 0;
+
+  .six {
+
+    @media only screen and (min-width: 768px) {
+      @include span-columns(12);
+    }
+
+    @media only screen and (min-width: 955px) {
+      @include span-columns(6);
+    }
+  }
+
+  p {
+    font-size: 0.857em;
+  
+    @media only screen and (min-width: 955px) {
+      margin-top: 20px;
+      padding-right: 20px;
+      border-right: 2px solid rgba(255,255,255,.05);
+    }
+  }
+
+  .three {
+
+    @media only screen and (min-width: 768px) {
+      @include span-columns(12);
+    }
+
+    @media only screen and (min-width: 955px) {
+      @include span-columns(3);
+    }
+  }
+
+  h4 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-weight: 700;
+    color: #FFF;
+
+    @media only screen and (min-width: 955px) {
+      border-right: 2px solid rgba(255,255,255,.05);
+      height: 76px;
+    }
+  }
+
+  a {
+    color: #FFF;
+
+    &:hover {
+      color: rgba(255,255,255,.8);
+    }
+  }
+
+  .cookie-links {
+    margin-bottom: 20px;
+
+    @media only screen and (min-width: 955px) {
+      margin-top: 20px;
+    }
+
+    span {
+      margin: 0 20px 0 0;
+
+      @media only screen and (min-width: 955px) {
+        display: block;
+
+        &:first-of-type {
+          margin: 0 0 5px;
+        }
+      }
+
+      &:last-of-type {
+        margin: 0;
+      }
+
+      a {
+        font-weight: 500;
+      }
+    }
+  }
+}

@@ -1,0 +1,260 @@
+.hero {
+  background: #EEE url('https://www.fitnessfirst.co.uk/globalassets/images/1400-x-650/freestyle-17-web-1400-x-650.jpg') top center no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 160px;
+  margin-top: 50px;
+  position: relative;
+  text-align: center;
+
+  @media only screen and (min-width: 600px) {
+    height: 200px;
+  }
+
+  @media only screen and (min-width: 1025px) {
+    margin-top: 65px;
+  }
+  
+  h1 {
+    margin: 0;
+    text-transform: lowercase;
+  }
+
+  .hero-inner {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    @include transform(translateY(-50%));
+  }
+}
+
+.forum-header { 
+  background: #FFF;
+  padding: 30px 0 40px;
+  @include border-image(linear-gradient(to right, transparent 0%, #CCC 50%, transparent 100%)20 stretch);
+  border-width: 0 0 1px 0;
+
+  .headline {
+    text-align: center;
+    max-width: 800px;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: auto;
+    margin-right: auto;
+    color: #444;
+  }
+
+  span {
+    display: block;
+    text-align: center;
+
+    button {
+      margin-top: 0;
+    }
+  }
+}
+
+.forum-content {
+	margin: 30px 0;
+
+	.container {
+		padding: 0;
+
+		@media only screen and (min-width: 539px) {
+			padding: 0 15px;
+		}
+
+		.forum-posts-container {
+			background: #FFF;
+			padding: 20px 15px;
+			margin-bottom: 20px;
+			border: 1px solid rgba(0,0,0,0.08);
+
+			@media only screen and (min-width: 539px) {
+				padding: 20px;
+			}
+
+			@media only screen and (min-width: 800px) {
+				margin-right: 2.35765%;
+				margin-bottom: 0;
+			}
+
+			.single-post-container {
+				margin: 30px 0 0;
+
+				&:first-of-type {
+					margin: 10px 0 0;
+				} 
+
+		    .user-image {
+					width: 10%;
+					float: left;
+
+					@media only screen and (min-width: 1025px) {
+						width: 6.5%;
+					}
+
+					img {
+						width: 40px;
+						height: 40px;
+						border-radius: 50%;
+					}
+				}
+
+				.forum-post {
+		      width: 75%;
+		      float: left;
+		      margin: 0 2.5% 0;
+
+		      @media only screen and (min-width: 1025px) {
+						width: 78.5%;
+					}
+
+		      h2 {
+		      	margin: 0;
+		      	text-transform: capitalize;
+		      	font-size: 1.7em;
+		      	letter-spacing: 2px;
+		      }
+
+		      p {
+		      	color: #AAA;
+		      	letter-spacing: .03em;
+		      	line-height: 1.5;
+            margin-top: 5px;
+
+		      	strong {
+		      		color: #888;
+		      		letter-spacing: .06em;
+		      	}
+
+		      	@media only screen and (min-width: 768px) {
+		          font-size: 1.15em;
+		          line-height: 1.6;
+		      	}
+		      }
+				}
+
+				.forum-replies {
+					width: 10%;
+					float: left;
+					text-align: center;
+
+					p {
+						margin: -5px 0 0;
+					  font-size: 1.5em;
+					  font-weight: 700;
+
+					  @media only screen and (min-width: 768px) {
+		      	  font-size: 1.7em;
+		        }
+
+						span {
+						  font-size: .42em;
+						  font-weight: 400;
+						  color: #aaa;
+
+						  @media only screen and (min-width: 539px) {
+		      	    font-size: .5em;
+		          }
+						}
+					}
+				}
+
+				hr {
+					border: solid #EAEAEA;
+          border-width: 1px 0 0;
+					margin: 0;
+				}
+
+				&:last-of-type {
+					@include clearfix;
+
+					hr {
+						display: none;
+					}
+				}
+		  }
+      
+      .pagination a, .pagination .previous_page, .pagination .current, .pagination .next_page {
+        padding: 0 .6em;
+			  line-height: 20px;
+			  text-decoration: none;
+			  background-color: #ffffff;
+			  font-weight: 700;
+			  letter-spacing: 3px;
+			  font-size: 1em;
+			  font-style: normal;
+			  color: #777;
+      }
+
+		  .pagination {
+		  	text-align: center;
+        margin: 30px 0 10px;
+
+        .previous_page {
+        	float: left;
+        	padding-left: 0;
+        	font-size: 1.1em;
+        	color: #AAA;
+        }
+
+        .current {
+        	color: $primary-color;
+        }
+
+        .next_page {
+        	float: right;
+        	padding-right: 0;
+        	font-size: 1.1em;
+        }
+		  }
+		}
+	}	
+}
+
+.category-container {
+	background: #FFF;
+	padding: 20px 15px;
+	border: 1px solid rgba(0,0,0,0.08);
+
+	@media only screen and (min-width: 539px) {
+		padding: 20px;
+	}
+
+	span {
+		.button {
+    	display: inline-block;
+      text-align: center;
+      margin: 0 0 20px;
+      width: 100%;
+    }
+	}
+
+	nav {
+
+		span {
+			display: block;
+      margin: 5px 0;
+
+      &:first-of-type {
+      	margin: 0 0 5px;
+      }
+
+      a {
+      	font-size: 1.5em;
+      	color: #444;
+      	letter-spacing: 1px;
+      }
+		}
+
+		hr {
+			margin: 0;
+
+			&:last-of-type {
+				display: none;
+			}
+		}
+	}
+}

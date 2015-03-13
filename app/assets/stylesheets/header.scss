@@ -1,0 +1,166 @@
+header {
+  @include linear-gradient(to right, $primary-color, $accent-color);
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  height: 50px;
+  position: absolute;
+  width: 100%;
+  z-index: 2;
+  top: 0;
+
+  @media only screen and (min-width: 1025px) {
+    height: $nav-height;
+  }
+
+  .logo {
+  }
+
+  .navicon-button {
+    z-index: 1;
+    padding: 23px 0;
+    margin: 0;
+    display: inline-block;
+    position: relative;
+    float: right;
+    @include transition($duration/2 ease);
+    cursor: pointer;
+    user-select: none;
+
+    @media only screen and (min-width : 1025px) {
+      display: none;
+    }
+
+    @media only screen and (max-width : 1024px) {
+      display: block;
+    }
+
+    &.open {
+      @include transform(scale(.75));
+      &:not(.steps) .navicon:before,
+      &:not(.steps) .navicon:after {
+        top: 0 !important;
+      }
+
+      .navicon {
+        background: transparent;
+
+        &:before, &:after {
+          @include transition($duration ease);
+        }
+
+        &:before {
+          @include transform(rotate(-45deg));
+        }
+
+        &:after {
+          @include transform(rotate(45deg));
+        }
+      }
+    }
+
+    .navicon {
+      position: relative;
+      width: 36px;
+      height: 4px;
+      background: #fff;
+      @include transition($duration ease);
+
+      &:before, &:after {
+        display: block;
+        content: "";
+        height: 4px;
+        width: 36px;
+        background: #fff;
+        position: absolute;
+        z-index: -1;
+        @include transition($duration $duration/2 ease);
+      }
+
+      &:before {
+        top: 10px;
+      }
+
+      &:after {
+        top: -10px;
+      }
+    }
+
+    .close {
+      &:before, &:after {
+        height: 6px;
+      }
+    }
+
+    &:hover {
+      @include transition($duration ease);
+      
+      .navicon:before, .navicon:after {
+        @include transition($duration/2 ease);
+      }
+    }
+  }
+
+  nav {
+    clear: both;
+    display: none;
+    text-align: center;
+
+    @media only screen and (min-width: 1025px) {
+      display: inline-block;
+      float: right;
+      text-align: left;
+    }
+
+    span {
+      display: block;
+
+      a {
+        font-size: 1.75em;
+        font-weight: 900;
+        text-transform: lowercase;
+        color: #FFF;
+        display: inline-block;
+        padding: 5px 0;
+        @include transition(color $duration/2 ease);
+
+        &:hover, &:focus {
+          color: rgba(255,255,255,.8);
+        }
+
+        @media only screen and (min-width: 1025px) {
+          margin-left: 30px;
+          display: inline;
+          padding: 0;
+          text-transform: capitalize;
+          letter-spacing: 1px;
+          font-weight: 900;
+          font-size: 1.2em;
+        }
+      }
+
+      @media only screen and (min-width: 1025px) {
+        float: left;
+        line-height: $nav-height;
+      }
+      &:last-of-type a {
+        padding-bottom: 20px;
+
+        @media only screen and (min-width: 1025px) {
+          padding-bottom: 0;
+        }
+      }
+    }
+  }
+
+  .nav-expanded {
+    display: block;
+  }
+}
+
+.header-fill {
+  height: auto;
+
+  @media only screen and (min-width: 1025px) {
+    height: $nav-height;
+    min-height: $nav-height;
+  }
+}

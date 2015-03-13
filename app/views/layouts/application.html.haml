@@ -1,23 +1,61 @@
 !!!
-%html
+%html{:lang => "en"}
 %head
-  %title Forum
+  %meta{:charset => "utf-8"}
+  %meta{:name => "description", :content => ""}
+  %meta{:name => "viewport", :content => "width=device-width, initial-scale=1"}
+  %title Conditioning Centre Community
   = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
-  %link{ rel: "stylesheet", href: "http://fonts.googleapis.com/css?family=Lato:300,400,700", type: "text/css" }
   = javascript_include_tag 'application', 'data-turbolinks-track' => true
   = csrf_meta_tags
 %body
-  %header
-    #logo
-      = link_to "Rails Forum", root_path
-    #buttons
-      - if user_signed_in?
-        = link_to('Sign Out', destroy_user_session_path, :method => :delete)
-      - else
-        = link_to "Sign Up", new_user_registration_path
-        = link_to "Sign In", new_user_session_path
 
-  %p.notice= notice
-  %p.alert= alert
+  %div.wrapper
+    %header
+      %div.container
 
-  = yield
+        = link_to '', root_path, :class => 'logo'
+
+        %a.navicon-button
+          %div.navicon
+
+        %nav
+          %span
+            = link_to 'Discussions', root_path
+          %span
+            = link_to 'Videos', root_path
+          %span
+            = link_to 'Programs', root_path
+          %span
+            - if user_signed_in?
+              = link_to current_user.username, :class => 'clicker'
+              %span
+                = link_to 'Account', edit_user_registration_path
+              %span
+                = link_to 'Billing', edit_user_registration_path
+              %span
+                = link_to('Sign Out', destroy_user_session_path, method: :delete)
+            - else
+              %span
+                = link_to "Sign In", new_user_session_path
+                = link_to "Join The Team", new_user_registration_path
+
+    %p.notice= notice
+    %p.alert= alert
+
+    = yield
+
+%footer
+  %div.container
+    %div.six
+      %p.copyright 
+        Copyright &copy; The Conditioning Centre
+        = Time.now.year
+        <br>
+        Registered in England No.8933965
+    %div.six
+      %div.social-icons
+        %a{ :href => "#", :class => "social-icon icon-facebook" }
+        %a{ :href => "#", :class => "social-icon icon-twitter" }
+        %a{ :href => "#", :class => "social-icon icon-googleplus" }
+        %a{ :href => "#", :class => "social-icon icon-youtube" }

@@ -1,0 +1,57 @@
+footer {
+  @include linear-gradient(to right, $primary-color, $accent-color);
+  display: table-footer-group; // For sticky footer
+  height: 1px; // For sticky footer
+
+  a, address, p {
+    color: #FFF;
+  }
+
+  a {
+    font-weight: 500;
+    @include transition($duration/2 ease);
+
+    &:hover, &:focus {
+      color: rgba(255,255,255,.8);
+    }
+  }
+
+  .container {
+    padding-top: 33px;
+  }
+
+  .six {
+    @media only screen and (min-width: 496px) {
+      @include span-columns(6);
+    }
+
+    .copyright {
+      font-size: 0.857em;
+      color: rgba(255,255,255,.6);
+      text-align: center;
+
+      @media only screen and (min-width: 496px) {
+        text-align: left;
+      }
+    }
+
+    .social-icons {
+      margin: 0 0 20px 0;
+      text-align: center;
+
+      @media only screen and (min-width: 496px) {
+        float: right;
+        margin: 12px 0 0 0;
+      }
+
+      .social-icon {
+        font-size: 1.5em;
+        margin-left: 20px;
+
+        &:first-of-type {
+          margin-left: 0;
+        }
+      }
+    }
+  }
+}

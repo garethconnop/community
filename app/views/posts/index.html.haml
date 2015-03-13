@@ -1,29 +1,61 @@
-= link_to "All", root_path
-- Category.all.each do |category|
-  = link_to category.name, posts_path(category: category.name)
+%section.hero
+  %div.container.hero-inner
+    %h1 Discussions
 
-- if user_signed_in?
-  = link_to "New Post", new_post_path
+%section.forum-header
+  %div.container
+    %h2.headline
+      Welcome to the discussions forum. Get help &amp; advice on Excercise, Nutrition &amp; Mobilty.
 
-- @posts.each do |post|
-  = image_tag post.user.avatar.url(:thumb)
-  %h2= link_to post.title, post
-  %p
-    Posted
-    = time_ago_in_words(post.created_at)
-    ago by
-    = post.user.username
-    in
-    = post.category.name
+%section.forum-content
+  %div.container
+        
+    %div.forum-posts
+      %div.nine.forum-posts-container
 
-  %h2
-    - if post.comments.count == 1 
-      = post.comments.count
-      %span Reply
-    - else
-      = post.comments.count
-      %span Replies 
+        - @posts.each do |post|
+          %div.single-post-container
+            %div.user-image
+              = image_tag post.user.avatar.url(:thumb)
+            %div.forum-post
+              %h2= link_to post.title, post
+              %p
+                %em
+                  Posted
+                  = time_ago_in_words(post.created_at)
+                  ago by
+                  %strong
+                    = post.user.username
+                  in
+                  %strong
+                    = post.category.name
 
-  %hr
+            %div.forum-replies
+              %p
+                - if post.comments.count == 1
+                  = post.comments.count
+                  %br
+                  %span Reply
+                - else
+                  = post.comments.count
+                  %br
+                  %span Replies 
 
-= will_paginate @posts, previous_label: "Previous", next_label: "Next", inner_window: 1, outer_window: 0
+            %hr
+
+        = will_paginate @posts, previous_label: "Previous", next_label: "Next", inner_window: 1, outer_window: 0
+
+    %div.category-sidebar
+      %div.three.category-container
+        %span
+          - if user_signed_in?
+            = link_to "New Post", new_post_path,
+              { :class => "button" }
+        %nav
+          %span
+            = link_to "All Topics", root_path
+          %hr 
+          - Category.all.each do |category|
+            %span
+              = link_to category.name, posts_path(category: category.name)
+            %hr
