@@ -348,6 +348,10 @@
       	color: #444;
       	letter-spacing: 1px;
       }
+
+      a.active {
+      	color: $link-color;
+      }
 		}
 
 		hr {
