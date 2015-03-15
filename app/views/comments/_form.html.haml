@@ -1,6 +1,7 @@
 = simple_form_for([@post, @post.comments.build]) do |f|
 
-  = f.label :comment
+  = f.label :comment, :class => 'hide'
   = f.text_area :comment
-
-  = f.submit "Reply"
+  
+  %span
+    = f.submit "Reply"

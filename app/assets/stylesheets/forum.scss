@@ -55,6 +55,106 @@
   }
 }
 
+
+
+
+.user-image {
+	width: 10%;
+	float: left;
+
+	@media only screen and (min-width: 1025px) {
+		width: 6.5%;
+	}
+
+	img {
+		width: 40px;
+		height: 40px;
+		border-radius: 50%;
+	}
+
+	span {
+		display: block;
+	}
+}
+
+
+
+
+
+.back, .edit, .delete {
+	font-size: 1.1em;
+	color: #AAA;
+	font-weight: 700;
+	letter-spacing: 3px;
+}
+
+.back {
+	float: left;
+
+	&:hover, &:focus {
+		color: #444;
+  }
+}
+
+
+
+
+
+
+
+
+
+.edit-container {
+
+	.edit, .delete {
+
+		&:hover, &:focus {
+			color: #AAA;
+	  }
+	}
+
+	.delete {
+		margin-left: 3px;
+
+		&:before {
+			content: "|";
+		}
+	}
+}
+
+
+
+
+
+.post-body-text {
+	margin: 4px 0 0;
+	line-height: 1.8;
+  font-size: 1.25em;
+  color: #999;
+}
+
+
+
+
+
+
+.username {
+	margin: -5px 0 0;
+  color: #444;
+  font-size: 1.5em;
+}
+
+.date {
+	color: #AAA;
+	margin: -2px 0 40px;
+}
+
+
+
+
+
+
+
 .forum-content {
 	margin: 30px 0;
 
@@ -69,10 +169,12 @@
 			background: #FFF;
 			padding: 20px 15px;
 			margin-bottom: 20px;
-			border: 1px solid rgba(0,0,0,0.08);
+			border-top: 1px solid rgba(0,0,0,0.08);
+	    border-bottom: 1px solid rgba(0,0,0,0.08);
 
 			@media only screen and (min-width: 539px) {
 				padding: 20px;
+				border: 1px solid rgba(0,0,0,0.08);
 			}
 
 			@media only screen and (min-width: 800px) {
@@ -85,21 +187,6 @@
 
 				&:first-of-type {
 					margin: 10px 0 0;
-				} 
-
-		    .user-image {
-					width: 10%;
-					float: left;
-
-					@media only screen and (min-width: 1025px) {
-						width: 6.5%;
-					}
-
-					img {
-						width: 40px;
-						height: 40px;
-						border-radius: 50%;
-					}
 				}
 
 				.forum-post {
@@ -116,6 +203,13 @@
 		      	text-transform: capitalize;
 		      	font-size: 1.7em;
 		      	letter-spacing: 2px;
+
+		      	a {
+
+		      		&:hover, a:focus {
+                color: $link-color;
+		      		}
+		      	}
 		      }
 
 		      p {
@@ -151,6 +245,8 @@
 		        }
 
 						span {
+							display: block;
+							margin: -8px 0 0;
 						  font-size: .42em;
 						  font-weight: 400;
 						  color: #aaa;
@@ -197,6 +293,9 @@
         	float: left;
         	padding-left: 0;
         	font-size: 1.1em;
+        }
+
+        .disabled {
         	color: #AAA;
         }
 
@@ -217,10 +316,12 @@
 .category-container {
 	background: #FFF;
 	padding: 20px 15px;
-	border: 1px solid rgba(0,0,0,0.08);
+	border-top: 1px solid rgba(0,0,0,0.08);
+	border-bottom: 1px solid rgba(0,0,0,0.08);
 
 	@media only screen and (min-width: 539px) {
 		padding: 20px;
+		border: 1px solid rgba(0,0,0,0.08);
 	}
 
 	span {
@@ -255,6 +356,163 @@
 			&:last-of-type {
 				display: none;
 			}
+		}
+	}
+}
+
+// forum show
+
+
+
+
+
+
+
+
+
+
+.forum-show {
+  margin: 80px 0 30px;
+
+  @media only screen and (min-width: 1025px) {
+		margin: 95px 0 30px;
+	}
+
+	.container {
+    padding: 0;
+    max-width: 900px;
+
+    @media only screen and (min-width: 539px) {
+			padding: 0 15px;
+		}
+
+		.nine {
+			margin-right: auto;
+	    margin-left: auto;
+	    padding: 20px 15px 40px;
+	    float: none;
+	    background: #FFF;
+	    border-top: 1px solid rgba(0,0,0,0.08);
+	    border-bottom: 1px solid rgba(0,0,0,0.08);
+
+	    @media only screen and (min-width: 539px) {
+				padding: 20px 20px 40px;
+				border: 1px solid rgba(0,0,0,0.08);
+			}
+
+			@media only screen and (min-width: 800px) {
+				width: 100%;
+			}
+
+	    .post-nav {
+	    	margin: 0 0 30px;
+	    	@include clearfix;
+
+	    	@media only screen and (min-width: 539px) {
+					margin: 0 0 40px;
+				}
+
+				@media only screen and (min-width: 568px) {
+					margin: 0 0 50px;
+				}
+
+				.edit-container {
+					float: right;
+				}
+	    }
+
+	    .post-container {
+	    	@include clearfix;
+
+				.post {
+					width: 85%;
+			    float: left;
+			    margin: 0 2.5% 0;
+
+			    @media only screen and (min-width: 1025px) {
+						width: 88.5%;
+					}
+
+					h1 {
+						margin: 0;
+		      	text-transform: capitalize;
+		      	font-size: 1.7em;
+		      	font-weight: 400;
+		      	line-height: 1.10;
+		      	letter-spacing: 2px;
+		      	color: #444;
+
+            @media only screen and (min-width: 539px) {
+		      		font-size: 2em;
+		      	}		      	
+
+            @media only screen and (min-width: 768px) {
+		      		font-size: 2.5em;
+		      		margin-top: -6px;
+		      	}	
+
+		      	@media only screen and (min-width: 1025px) {
+		      		font-size: 3em;
+		      	}
+					}
+
+					p.meta {
+						color: #AAA;
+		      	letter-spacing: .03em;
+		      	line-height: 1.5;
+	          margin: 4px 0 40px;
+
+		      	strong {
+		      		color: #888;
+		      		letter-spacing: .06em;
+		      	}
+
+		      	@media only screen and (min-width: 768px) {
+		          line-height: 1.6;
+		        }
+					}
+
+					
+				}
+	    }
+
+	    .replies-container {
+	    	@include clearfix;
+	    	margin: 60px 0 0;
+
+	    	h2 {
+	    		margin: 0 0 20px;
+	    		color: #444;
+	    	}
+
+	    	hr {
+	    		margin: 0;
+	    	}
+
+	    	.reply-container {
+	    		@include clearfix;
+	    		margin: 30px 0;
+
+		    	.post-reply {
+		    		width: 85%;
+		    		float: left;
+		    		margin: 0 2.5% 0;
+
+            .edit-container {
+              margin: 30px 0 0;
+	    		  }
+		    	}
+	      }
+      }
+
+      .reply-form {
+      	margin: 60px 0 0;
+
+      	h3 {
+      		margin: 0 0 20px;
+      		color: #444;
+      	}
+      }
 		}
 	}
 }

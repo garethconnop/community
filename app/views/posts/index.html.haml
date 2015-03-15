@@ -13,37 +13,40 @@
     %div.forum-posts
       %div.nine.forum-posts-container
 
-        - @posts.each do |post|
-          %div.single-post-container
-            %div.user-image
-              = image_tag post.user.avatar.url(:thumb)
-            %div.forum-post
-              %h2= link_to post.title, post
-              %p
-                %em
-                  Posted
-                  = time_ago_in_words(post.created_at)
-                  ago by
-                  %strong
-                    = post.user.username
-                  in
-                  %strong
-                    = post.category.name
+        - if @posts.size > 0
 
-            %div.forum-replies
-              %p
-                - if post.comments.count == 1
-                  = post.comments.count
-                  %br
-                  %span Reply
-                - else
-                  = post.comments.count
-                  %br
-                  %span Replies 
+          - @posts.each do |post|
+            %div.single-post-container
+              %div.user-image
+                = image_tag post.user.avatar.url(:thumb)
+              %div.forum-post
+                %h2= link_to post.title, post
+                %p
+                  %em
+                    Posted
+                    = time_ago_in_words(post.created_at)
+                    ago by
+                    %strong
+                      = post.user.username
+                    in
+                    %strong
+                      = post.category.name
 
-            %hr
+              %div.forum-replies
+                %p
+                  - if post.comments.count == 1
+                    = post.comments.count
+                    %span Reply
+                  - else
+                    = post.comments.count
+                    %span Replies 
 
-        = will_paginate @posts, previous_label: "Previous", next_label: "Next", inner_window: 1, outer_window: 0
+              %hr
+
+          = will_paginate @posts, previous_label: "Previous", next_label: "Next", inner_window: 1, outer_window: 0
+
+        - else
+          = render partial: "no_posts"
 
     %div.category-sidebar
       %div.three.category-container

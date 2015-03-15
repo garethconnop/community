@@ -149,7 +149,8 @@ body {
 
 input, textarea {
   -webkit-appearance: none;
-  border: 1px solid #DFDFDF;
+  background: #f4f4f4;
+  border: 1px solid #e9e9e9;
   @include placeholder {
     color: $placeholder-color;
   }
@@ -172,6 +173,8 @@ input[type=text] {
 
 textarea {
   padding: 8px 16px;
+  margin: 0 0 30px;
+  height: 200px;
   color: $text-color;
   display: block;
   outline: none;
@@ -215,11 +218,16 @@ input[type=submit] {
   color: #FFF;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  background: $accent-color;
-  @include transition($duration/2 ease);
+  background: $primary-color;
+  @include transition($duration ease);
+
+  @media only screen and (min-width: 768px) {
+    width: auto;
+    padding: 13px 24px;
+  }
 
   &:hover, &:focus {
-    background: lighten($accent-color, 3%);
+    background: $button-hover;
   }
 }
 
@@ -250,10 +258,10 @@ button, a.button {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  @include transition($duration/2 ease);
+  @include transition($duration ease);
 
   &:hover, &:focus {
-    background: $accent-color;
+    background: $button-hover;
   }
 }
 

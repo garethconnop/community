@@ -9,13 +9,13 @@
         %li
           = message
 
-  = f.label :title
+  = f.label :title, required: false
   = f.text_field :title, autofocus: true
 
-  = f.label :category_id
+  = f.label :category_id, required: false
   = f.collection_select :category_id, Category.all, :id, :name, {prompt: "Choose a Category"}
 
-  = f.label :content
+  = f.label :content, required: false
   = f.text_area :content
 
   = f.submit "Submit"

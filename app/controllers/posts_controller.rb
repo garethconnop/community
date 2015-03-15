@@ -5,11 +5,13 @@ class PostsController < ApplicationController
 
 	def index
 		if params[:category].blank?
-		  @posts = Post.all.order("created_at DESC").paginate(page: params[:page], per_page: 5)
+		  @posts = Post.all.order("created_at DESC").paginate(page: params[:page], per_page: 10)
 		else
 		  @category_id = Category.find_by(name: params[:category]).id
-		  @posts = Post.where(category_id: @category_id).order("created_at DESC").paginate(page: params[:page], per_page: 5)
+		  @posts = Post.where(category_id: @category_id).order("created_at DESC").paginate(page: params[:page], per_page: 10)
 		end
+
+		# @category = Category.find_by(name: params[:category])
 	end
 
 	def show

@@ -1,35 +1,55 @@
-= link_to "Back to Forum", root_path
+%div.forum-show
+  %div.container
+    %div.nine
+      %div.post-nav
 
-- if @post.user == current_user
-  = link_to "Edit", edit_post_path(@post)
+        = link_to "Back to Forum", root_path, :class => 'back'
 
-= image_tag @post.user.avatar.url(:thumb)
+        %div.edit-container
+          - if @post.user == current_user
+            = link_to "Edit", edit_post_path(@post), :class => 'edit'
 
-%h1= @post.title
+          - if @post.user == current_user
+            = link_to " Delete", edit_post_path(@post), :class => 'delete'
 
-%p
-  Posted
-  = time_ago_in_words(@post.created_at)
-  ago by
-  = @post.user.username
-  in
-  = @post.category.name
+      %div.post-container
+        %div.user-image
+          = image_tag @post.user.avatar.url(:thumb)
 
-%p= @post.content
+        %div.post
+          %h1= @post.title
 
-%h2
-  - if @post.comments.count == 1 
-    = @post.comments.count
-    %span Reply
-  - else
-    = @post.comments.count
-    %span Replies
+          %p.meta
+            %em
+              Posted
+              = time_ago_in_words(@post.created_at)
+              ago by
+              %strong
+                = @post.user.username
+              in
+              %strong
+                = @post.category.name
 
-%hr
+          %p.post-body-text
+            = @post.content
 
-= render @post.comments
+      - if @post.comments.count > 0
+        %div.replies-container
 
-%h3 Add a Reply
+          %h2
+            - if @post.comments.count == 1 
+              = @post.comments.count
+              Reply
+            - else
+              = @post.comments.count
+              Replies
 
-= render "comments/form"
+          %hr
+
+          = render @post.comments
+
+      %div.reply-form
+        %h3 Add a Reply
+
+        = render "comments/form"
 

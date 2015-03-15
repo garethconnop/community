@@ -1,14 +1,25 @@
-= image_tag comment.user.avatar.url(:thumb)
+%div.reply-container
 
-- if comment.user == current_user
-  = link_to "Edit", edit_post_comment_path(comment.post, comment)
+  %div.user-image
+    = image_tag comment.user.avatar.url(:thumb)
 
-%p= comment.user.username
+  %div.post-reply
 
-%p
-  = time_ago_in_words(comment.created_at)
-  ago
+    %p.username
+      = comment.user.username
 
-%p= comment.comment
+    %p.date
+      = time_ago_in_words(comment.created_at)
+      ago
+
+    %p.post-body-text
+      = comment.comment
+
+    %div.edit-container
+      - if comment.user == current_user
+        = link_to "Edit", edit_post_comment_path(comment.post, comment), :class => 'edit'
+
+      - if comment.user == current_user
+        = link_to " Delete", edit_post_comment_path(comment.post, comment), :class => 'delete'
 
 %hr
