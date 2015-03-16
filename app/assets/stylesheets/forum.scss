@@ -86,32 +86,17 @@
 	color: #AAA;
 	font-weight: 700;
 	letter-spacing: 3px;
+
+	&:hover, &:focus {
+		color: #888;
+  }
 }
 
 .back {
 	float: left;
-
-	&:hover, &:focus {
-		color: #444;
-  }
 }
 
-
-
-
-
-
-
-
-
 .edit-container {
-
-	.edit, .delete {
-
-		&:hover, &:focus {
-			color: #AAA;
-	  }
-	}
 
 	.delete {
 		margin-left: 3px;

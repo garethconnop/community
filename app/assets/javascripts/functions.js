@@ -19,6 +19,24 @@ jQuery(document).ready(function($) {
 
   //////////////////////////////////////////////////////////////////////////
 
+
+
+  // User Navigation Dropdown
+
+  $('.clicker').click(function(e) {
+    $('nav span .dropdown').slideToggle(0);
+    $('.clicker').toggleClass('open');
+  });
+
+  $(document).click(function() {
+    if (!$(event.target).closest('header').length) {
+    $('nav span .dropdown', this).slideUp(0);
+    $('.clicker').removeClass('open');
+    }
+  });
+
+  //////////////////////////////////////////////////////////////////////////
+
 });
 
 
