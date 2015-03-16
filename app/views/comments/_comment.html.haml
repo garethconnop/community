@@ -12,8 +12,8 @@
       = time_ago_in_words(comment.created_at)
       ago
 
-    %p.post-body-text
-      = comment.comment
+    %div.post-body-text
+      = markdown(comment.comment).html_safe
 
     %div.edit-container
       - if comment.user == current_user

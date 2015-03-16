@@ -15,6 +15,7 @@ gem 'devise', '~> 3.4.1'
 gem 'will_paginate', '~> 3.0.7'
 gem 'paperclip', '~> 4.2.1'
 gem 'neat'
+gem 'redcarpet', '~> 3.2.2'
 
 group :development, :test do
   gem 'byebug'

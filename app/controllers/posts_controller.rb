@@ -1,7 +1,6 @@
 class PostsController < ApplicationController
   before_action :find_post, only: [:show, :edit, :update]
   before_action :authenticate_user!, except: [:index, :show]
-  #remove above exceptions once user account and replacement home page setup
 
 	def index
 		if params[:category].blank?
@@ -10,8 +9,6 @@ class PostsController < ApplicationController
 		  @category_id = Category.find_by(name: params[:category]).id
 		  @posts = Post.where(category_id: @category_id).order("created_at DESC").paginate(page: params[:page], per_page: 10)
 		end
-
-		# @category = Category.find_by(name: params[:category])
 	end
 
 	def show

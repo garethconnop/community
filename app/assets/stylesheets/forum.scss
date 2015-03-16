@@ -127,10 +127,24 @@
 
 
 .post-body-text {
-	margin: 4px 0 0;
 	line-height: 1.8;
-  font-size: 1.25em;
+  font-size: 1.2em;
   color: #999;
+
+  p {
+
+    &:last-of-type {
+    	margin: 0;
+    }
+
+    a {
+
+    	&:hover, &:focus {
+    		color: $link-color;
+    		text-decoration: underline;
+    	}
+    }
+  } 
 }
 
 

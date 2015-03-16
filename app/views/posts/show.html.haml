@@ -30,8 +30,8 @@
               %strong
                 = @post.category.name
 
-          %p.post-body-text
-            = @post.content
+          %div.post-body-text
+            = markdown(@post.content).html_safe
 
       - if @post.comments.count > 0
         %div.replies-container
