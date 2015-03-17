@@ -40,10 +40,13 @@
               %span
                 = link_to "Sign In", sign_in_path
                 / = link_to "Sign Up", join_path
-
-    %div.alert-container
-      %p.notice= notice
-      %p.alert= alert
+    
+    - if notice
+      %div.alert-container
+        %p.notice= notice
+    - if alert
+      %div.alert-container
+        %p.alert= alert
 
     = yield
 

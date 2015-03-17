@@ -37,7 +37,20 @@ jQuery(document).ready(function($) {
 
   //////////////////////////////////////////////////////////////////////////
 
+
+  
+  // Auto remove alerts and notices from Devise after display
+
+  setTimeout(function(){
+    $('.alert-container').fadeOut( "slow", function() {
+      $(this).remove();
+    });
+  }, 4500);
+
+  //////////////////////////////////////////////////////////////////////////
+
 });
+
 
 
 

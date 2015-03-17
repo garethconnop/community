@@ -32,7 +32,7 @@
 .forum-header { 
   background: #FFF;
   padding: 30px 0 40px;
-  @include border-image(linear-gradient(to right, transparent 0%, #CCC 50%, transparent 100%)20 stretch);
+  @include border-image(linear-gradient(to right, transparent 0%, #DDD 50%, transparent 100%)20 stretch);
   border-width: 0 0 1px 0;
 
   .headline {
@@ -103,6 +103,7 @@
 
 		&:before {
 			content: "|";
+			color: #AAA;
 		}
 	}
 }
@@ -452,10 +453,6 @@
             @media only screen and (min-width: 768px) {
 		      		font-size: 2.5em;
 		      		margin-top: -6px;
-		      	}	
-
-		      	@media only screen and (min-width: 1025px) {
-		      		font-size: 3em;
 		      	}
 					}
 
