@@ -22,7 +22,7 @@ class PostsController < ApplicationController
 		@post = current_user.posts.build(post_params)
 
 		if @post.save
-			redirect_to @post
+			redirect_to @post, notice: "Your post has been submitted!"
 		else
 			render 'new'
 		end
@@ -33,7 +33,7 @@ class PostsController < ApplicationController
 
 	def update
 		if @post.update(post_params)
-			redirect_to @post
+			redirect_to @post, notice: "Your post has been updated!"
     else
     	render 'edit'
     end

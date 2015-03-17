@@ -18,19 +18,3 @@
 
 /*pages*/
 @import "forum";
-
-a.logo {
-  background: transparent url(asset_path(#{"logo.svg"})) no-repeat center center;
-  background-size: contain;
-  display: inline-block;
-  margin: 5px 0 0;
-  height: 40px;
-  width: 34px;
-  fill: #FFF;
-
-  @media only screen and (min-width: 1025px) {
-    margin: 9px 0 0;
-    width: 40px;
-    height: 47px;
-  }
-}

@@ -28,7 +28,9 @@
             = link_to 'Programs', root_path
           %span
             - if user_signed_in?
-              = link_to current_user.username, "#", :class => 'clicker'
+              %a.clicker.social-icon.icon-chevron-down<
+                = current_user.username
+              / = link_to current_user.username, "#", :class => 'clicker social-icon icon-chevron-down'
               %div.dropdown
                 %span
                   = link_to 'Account', edit_user_registration_path
@@ -39,7 +41,6 @@
             - else
               %span
                 = link_to "Sign In", sign_in_path
-                / = link_to "Sign Up", join_path
     
     - if notice
       %div.alert-container
@@ -62,5 +63,5 @@
       %div.social-icons
         %a{ :href => "#", :class => "social-icon icon-facebook" }
         %a{ :href => "#", :class => "social-icon icon-twitter" }
-        %a{ :href => "#", :class => "social-icon icon-googleplus" }
+        %a{ :href => "#", :class => "social-icon icon-google-plus" }
         %a{ :href => "#", :class => "social-icon icon-youtube" }

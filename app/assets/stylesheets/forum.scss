@@ -42,15 +42,16 @@
     margin-bottom: 0;
     margin-left: auto;
     margin-right: auto;
-    color: #444;
+    color: #777;
   }
 
   span {
-    display: block;
-    text-align: center;
+  	text-align: center;
+  	display: block;
 
-    button {
-      margin-top: 0;
+    .button {
+    	display: inline-block;
+      margin-top: 30px;
     }
   }
 }
@@ -94,6 +95,13 @@
 
 .back {
 	float: left;
+	line-height: 1.6;
+
+	&:before {
+		font-size: 13px;
+		margin-right: 4px;
+		color: #AAA;
+	}
 }
 
 .edit-container {
@@ -219,7 +227,7 @@
             margin-top: 5px;
 
 		      	strong {
-		      		color: #888;
+		      		color: #999;
 		      		letter-spacing: .06em;
 		      	}
 
@@ -239,6 +247,7 @@
 						margin: -5px 0 0;
 					  font-size: 1.5em;
 					  font-weight: 700;
+					  color: #888;
 
 					  @media only screen and (min-width: 768px) {
 		      	  font-size: 1.7em;
@@ -282,7 +291,11 @@
 			  letter-spacing: 3px;
 			  font-size: 1em;
 			  font-style: normal;
-			  color: #777;
+			  color: #AAA;
+
+			  &:hover, &:focus {
+			  	color: #888;
+			  }
       }
 
 		  .pagination {
@@ -296,7 +309,7 @@
         }
 
         .disabled {
-        	color: #AAA;
+        	color: #DDD;
         }
 
         .current {
@@ -345,7 +358,7 @@
 
       a {
       	font-size: 1.5em;
-      	color: #444;
+      	color: #666;
       	letter-spacing: 1px;
       }
 
@@ -391,6 +404,7 @@
 		}
 
 		.nine {
+			@include clearfix;
 			margin-right: auto;
 	    margin-left: auto;
 	    padding: 20px 15px 40px;
@@ -402,6 +416,10 @@
 	    @media only screen and (min-width: 539px) {
 				padding: 20px 20px 40px;
 				border: 1px solid rgba(0,0,0,0.08);
+			}
+
+			@media only screen and (min-width: 768px) {
+				padding: 20px 30px 40px;
 			}
 
 			@media only screen and (min-width: 800px) {
@@ -444,7 +462,7 @@
 		      	font-weight: 400;
 		      	line-height: 1.10;
 		      	letter-spacing: 2px;
-		      	color: #444;
+		      	color: #555;
 
             @media only screen and (min-width: 539px) {
 		      		font-size: 2em;
@@ -463,7 +481,7 @@
 	          margin: 4px 0 40px;
 
 		      	strong {
-		      		color: #888;
+		      		color: #999;
 		      		letter-spacing: .06em;
 		      	}
 
@@ -510,7 +528,30 @@
 
       	h3 {
       		margin: 0 0 20px;
-      		color: #444;
+      		color: #555;
+      	}
+
+      	p {
+      		font-size: 1.2em;
+      		color: #999;
+      	}
+
+      	.reply-buttons-container {
+      		@include clearfix;
+
+      		span {
+      			display: block;
+      		  float: left;
+            
+            &:first-of-type {
+            	margin-right: 20px;
+            }
+
+            .button {
+            	display: block;
+      			  margin: 30px 0 0;
+      		  }
+      		}
       	}
       }
 		}

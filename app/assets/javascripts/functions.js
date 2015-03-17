@@ -39,7 +39,7 @@ jQuery(document).ready(function($) {
 
 
   
-  // Auto remove alerts and notices from Devise after display
+  // Auto remove alerts and notices after display
 
   setTimeout(function(){
     $('.alert-container').fadeOut( "slow", function() {

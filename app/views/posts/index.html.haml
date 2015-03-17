@@ -6,6 +6,10 @@
   %div.container
     %h2.headline
       Welcome to the discussions forum. Get help &amp; advice on Excercise, Nutrition &amp; Mobilty.
+    %span
+      - if !user_signed_in?
+        = link_to "Join the Team", join_path,
+          { :class => "button" }
 
 %section.forum-content
   %div.container
