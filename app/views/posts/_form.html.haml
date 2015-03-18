@@ -9,11 +9,13 @@
         %li
           = message
 
-  = f.label :title, required: false
-  = f.text_field :title, autofocus: true
-
-  = f.label :category_id, required: false
-  = f.collection_select :category_id, Category.all, :id, :name, {prompt: "Choose a Category"}
+  %div.form-top
+    %div.form-left
+      = f.label :title, required: false
+      = f.text_field :title, autofocus: true
+    %div.form-right
+      = f.label :category_id, required: false
+      = f.collection_select :category_id, Category.all, :id, :name, {prompt: "Choose a Category"}
 
   = f.label :content, required: false
   = f.text_area :content

@@ -1,5 +1,4 @@
 %div.container.form-container
-
   %div.eight
 
     %h2
@@ -21,8 +20,9 @@
       = f.label :email
       = f.email_field :email
 
-      = f.label :avatar
-      = f.input_field :avatar
+      %div.avatar-input
+        = f.label :avatar, :class => 'avatar-label'
+        = f.input_field :avatar
 
       - if devise_mapping.confirmable? && resource.pending_reconfirmation?
         %p
@@ -38,15 +38,15 @@
 
       = f.label :current_password 
       %i (we need your current password to confirm your changes)
-      = f.password_field :current_password, autocomplete: "off"
+      = f.password_field :current_password, autocomplete: "off", :class => 'last-input'
 
       %div.form-actions
         = f.submit "Update"
 
-    %h3 Cancel my account
+    / %h3 Cancel my account
 
-    %p 
-      Unhappy?
-      = link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete
+    / %p 
+    /   Unhappy?
+    /   = link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete
 
-    = link_to "Back", :back
+    / = link_to "Back", :back

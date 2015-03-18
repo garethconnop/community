@@ -35,10 +35,11 @@ jQuery(document).ready(function($) {
     }
   });
 
+  //////////////////////////////////////////////////////////////////////////
+  
 
 
-
-
+  // Remove background color and padding of target comment
 
   setTimeout(function(){
     $('.comment:target').addClass("comment_background")

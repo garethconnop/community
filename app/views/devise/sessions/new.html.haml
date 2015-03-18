@@ -12,12 +12,14 @@
 
       = f.label :password
       = f.password_field :password, autocomplete: "off"
-
-      = f.check_box :remember_me, as: :boolean if devise_mapping.rememberable?
-      = f.label :remember_me
+ 
+      %div.remember-me
+        = f.check_box :remember_me, as: :boolean if devise_mapping.rememberable?
+        = f.label :remember_me
 
       = f.submit "Sign in"
 
-    = link_to "Sign up", join_path
-    %br
-    = link_to "Forgot your password?", new_user_password_path
+    %div.form-links
+      = link_to "Sign up", join_path
+      %br
+      = link_to "Forgot your password?", new_user_password_path

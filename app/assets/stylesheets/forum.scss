@@ -14,11 +14,6 @@
   @media only screen and (min-width: 1025px) {
     margin-top: 65px;
   }
-  
-  h1 {
-    margin: 0;
-    text-transform: lowercase;
-  }
 
   .hero-inner {
     position: absolute;
@@ -35,19 +30,8 @@
   @include border-image(linear-gradient(to right, transparent 0%, #DDD 50%, transparent 100%)20 stretch);
   border-width: 0 0 1px 0;
 
-  .headline {
-    text-align: center;
-    max-width: 800px;
-    margin-top: 0;
-    margin-bottom: 0;
-    margin-left: auto;
-    margin-right: auto;
-    color: #777;
-  }
-
   span {
   	text-align: center;
-  	display: block;
 
     .button {
     	display: inline-block;
@@ -71,10 +55,6 @@
 		width: 40px;
 		height: 40px;
 		border-radius: 50%;
-	}
-
-	span {
-		display: block;
 	}
 }
 
@@ -215,10 +195,6 @@
 					}
 
 		      h2 {
-		      	margin: 0;
-		      	text-transform: capitalize;
-		      	font-size: 1.7em;
-		      	letter-spacing: 2px;
 
 		      	a {
 
@@ -262,7 +238,6 @@
 		        }
 
 						span {
-							display: block;
 							margin: -8px 0 0;
 						  font-size: .42em;
 						  font-weight: 400;
@@ -273,12 +248,6 @@
 		          }
 						}
 					}
-				}
-
-				hr {
-					border: solid #EAEAEA;
-          border-width: 1px 0 0;
-					margin: 0;
 				}
 
 				&:last-of-type {
@@ -357,7 +326,6 @@
 	nav {
 
 		span {
-			display: block;
       margin: 5px 0;
 
       &:first-of-type {
@@ -376,7 +344,6 @@
 		}
 
 		hr {
-			margin: 0;
 
 			&:last-of-type {
 				display: none;
@@ -406,19 +373,19 @@
 			@include clearfix;
 			margin-right: auto;
 	    margin-left: auto;
-	    padding: 20px 15px 40px;
+	    padding: 20px 15px;
 	    float: none;
 	    background: #FFF;
 	    border-top: 1px solid rgba(0,0,0,0.08);
 	    border-bottom: 1px solid rgba(0,0,0,0.08);
 
 	    @media only screen and (min-width: 539px) {
-				padding: 20px 20px 40px;
+				padding: 20px 20px;
 				border: 1px solid rgba(0,0,0,0.08);
 			}
 
 			@media only screen and (min-width: 768px) {
-				padding: 20px 30px 40px;
+				padding: 20px 30px;
 			}
 
 			@media only screen and (min-width: 800px) {
@@ -458,16 +425,6 @@
 						width: 88.5%;
 					}
 
-					h1 {
-						margin: 0;
-		      	text-transform: capitalize;
-		      	font-size: 2em;
-		      	font-weight: 400;
-		      	line-height: 1.10;
-					  letter-spacing: 3px;
-					  color: #777;
-					}
-
 					p.meta {
 						color: #AAA;
 		      	letter-spacing: .03em;
@@ -483,8 +440,6 @@
 		          line-height: 1.6;
 		        }
 					}
-
-					
 				}
 	    }
 
@@ -494,13 +449,6 @@
 
 	    	h2 {
 	    		margin: 0 0 20px;
-	    		color: #777;
-				  font-size: 1.7em;
-				  letter-spacing: 2px;
-	    	}
-
-	    	hr {
-	    		margin: 0;
 	    	}
 
         .comment {
@@ -535,10 +483,6 @@
 
       	h3 {
       		margin: 0 0 20px;
-      		color: #777;
-				  font-weight: 400;
-				  font-size: 1.7em;
-				  letter-spacing: 2px;
       	}
 
       	p {
@@ -550,7 +494,6 @@
       		@include clearfix;
 
       		span {
-      			display: block;
       		  float: left;
             
             &:first-of-type {

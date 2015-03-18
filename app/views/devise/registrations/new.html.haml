@@ -1,5 +1,4 @@
 %div.container.form-container
-
   %div.eight
 
     %h2 Sign up
@@ -21,7 +20,7 @@
         = f.password_field :password, autocomplete: "off"  
 
       = f.label :password_confirmation
-      = f.password_field :password_confirmation, autocomplete: "off"
+      = f.password_field :password_confirmation, autocomplete: "off", :class => "last-input"
 
       %div.form-actions
         = f.submit "Sign up"
