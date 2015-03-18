@@ -30,7 +30,6 @@
             - if user_signed_in?
               %a.clicker.social-icon.icon-chevron-down<
                 = current_user.username
-              / = link_to current_user.username, "#", :class => 'clicker social-icon icon-chevron-down'
               %div.dropdown
                 %span
                   = link_to 'Account', edit_user_registration_path

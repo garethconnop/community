@@ -1,8 +1,7 @@
-%h1 Edit Reply
-
-= simple_form_for([@post, @comment]) do |f|
-
-  = f.label :comment
-  = f.text_area :comment
-  
-  = f.submit "Reply"
+%div.container.form-container
+  %div.eight
+    %h1 Edit Reply
+    = simple_form_for([@post, @comment]) do |f|
+      = f.label :comment
+      = f.text_area :comment
+      = f.submit "Reply"

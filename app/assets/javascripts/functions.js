@@ -35,6 +35,17 @@ jQuery(document).ready(function($) {
     }
   });
 
+
+
+
+
+
+  setTimeout(function(){
+    $('.comment:target').addClass("comment_background")
+  }, 3000);
+
+
+
   //////////////////////////////////////////////////////////////////////////
 
 

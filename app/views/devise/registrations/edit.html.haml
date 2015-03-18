@@ -1,48 +1,52 @@
-%h2
-  Edit
-  = resource_name.to_s.humanize
+%div.container.form-container
 
-= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
-  = devise_error_messages!
+  %div.eight
 
-  = f.label :first_name
-  = f.text_field :first_name, autofocus: true
+    %h2
+      Edit
+      = resource_name.to_s.humanize
 
-  = f.label :last_name
-  = f.text_field :last_name
+    = simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+      = devise_error_messages!
 
-  = f.label :username, required: false
-  = f.text_field :username
+      = f.label :first_name
+      = f.text_field :first_name, autofocus: true
 
-  = f.label :email
-  = f.email_field :email
+      = f.label :last_name
+      = f.text_field :last_name
 
-  = f.label :avatar
-  = f.input_field :avatar
+      = f.label :username, required: false
+      = f.text_field :username
 
-  - if devise_mapping.confirmable? && resource.pending_reconfirmation?
-    %p
-      Currently waiting confirmation for:
-      = resource.unconfirmed_email
+      = f.label :email
+      = f.email_field :email
 
-  = f.label :password
-  %i (leave it blank if you don't want to change it)
-  = f.password_field :password, autocomplete: "off"   
+      = f.label :avatar
+      = f.input_field :avatar
 
-  = f.label :password_confirmation
-  = f.password_field :password_confirmation, autocomplete: "off"
+      - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+        %p
+          Currently waiting confirmation for:
+          = resource.unconfirmed_email
 
-  = f.label :current_password 
-  %i (we need your current password to confirm your changes)
-  = f.password_field :current_password, autocomplete: "off"
+      = f.label :password
+      %i (leave it blank if you don't want to change it)
+      = f.password_field :password, autocomplete: "off"   
 
-  %div.form-actions
-    = f.submit "Update"
+      = f.label :password_confirmation
+      = f.password_field :password_confirmation, autocomplete: "off"
 
-%h3 Cancel my account
+      = f.label :current_password 
+      %i (we need your current password to confirm your changes)
+      = f.password_field :current_password, autocomplete: "off"
 
-%p 
-  Unhappy?
-  = link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete
+      %div.form-actions
+        = f.submit "Update"
 
-= link_to "Back", :back
+    %h3 Cancel my account
+
+    %p 
+      Unhappy?
+      = link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete
+
+    = link_to "Back", :back

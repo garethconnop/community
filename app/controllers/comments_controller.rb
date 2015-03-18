@@ -6,7 +6,7 @@ class CommentsController < ApplicationController
     @comment.save
 
   	if @comment.save
-  	  redirect_to post_path(@post)
+      redirect_to post_path(@post, anchor: "comment_#{@comment.id}")
   	else
   	  render 'new'
     end
