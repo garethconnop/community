@@ -8,7 +8,7 @@ class CommentsController < ApplicationController
   	if @comment.save
       redirect_to post_path(@post, anchor: "comment_#{@comment.id}")
   	else
-  	  render 'new'
+  	  redirect_to post_path(@post), alert: 'Unable to save your post.'
     end
   end
 

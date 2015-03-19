@@ -26,6 +26,22 @@
     	margin: 10px 0 30px;
     }
 
+    form {
+
+      h2 {
+        margin: 0;
+        font-size: 1.5em;
+      }
+
+      ul {
+        margin-bottom: 40px;
+
+        li {
+          color: #777;
+        }
+      }
+    }
+
     label, em, i {
     	color: #AAA;
     }

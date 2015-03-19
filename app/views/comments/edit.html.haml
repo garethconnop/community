@@ -2,6 +2,6 @@
   %div.eight
     %h1 Edit Reply
     = simple_form_for([@post, @comment]) do |f|
-      = f.label :comment
+      = f.label :comment, required: false, :class => 'hide'
       = f.text_area :comment
       = f.submit "Reply"

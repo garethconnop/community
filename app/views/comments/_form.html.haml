@@ -1,6 +1,6 @@
 = simple_form_for([@post, @post.comments.build]) do |f|
 
-  = f.label :comment, :class => 'hide'
+  = f.label :comment, required: false, :class => 'hide'
   = f.text_area :comment
   
   %span
