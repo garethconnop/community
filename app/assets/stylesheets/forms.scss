@@ -1,0 +1,106 @@
+.form-container {
+  max-width: 800px;
+  margin-top: 80px;
+  margin-bottom: 30px;
+
+  @media only screen and (min-width: 1025px) {
+    margin-top: 95px;
+  }
+
+  .eight {
+	  width: 100%;
+    background: #FFF;
+    padding: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+
+    @media only screen and (min-width: 768px) {
+      padding: 20px 30px;
+    }
+
+    h1 {
+      margin: 10px 0 30px;
+      font-size: 1.7em;
+    }
+
+    h2 {
+    	margin: 10px 0 30px;
+    }
+
+    label, em, i {
+    	color: #AAA;
+    }
+
+    .email-label:before {
+    	content: "or "
+    }
+
+    input[type=text], input[type=email], input[type=password] {
+    	margin-bottom: 20px;
+
+      &.last-input {
+        margin-bottom: 0;
+      }
+    }
+
+    .avatar-input {
+      margin-bottom: 20px;
+
+      .avatar-label {
+        display: block;
+      }
+    }
+
+    .remember-me {
+
+    }
+
+    a {
+    	color: #AAA;
+    	text-decoration: underline;
+
+    	&:hover, &:focus {
+    		color: $link-color
+    	} 
+    }
+  
+		.form-top {
+			@include clearfix;
+			margin-bottom: 20px;
+
+			@media only screen and (min-width: 768px) {
+				margin-bottom: 0;
+			}
+
+		  .form-left, .form-right {
+
+		  	@media only screen and (min-width: 768px) {
+		      width: 47.5%;
+		      float: left;
+		    }
+		  }
+
+			.form-left {
+
+				@media only screen and (min-width: 768px) {
+		      margin-right: 5%;
+		    }
+			}
+
+			.form-right {
+		    
+		    label {
+		    	display: block;
+		    }
+
+		    select {
+		    	width: 100%;
+		    	color: #777;
+		    }
+			}
+		}
+
+		.form-links {
+			margin-bottom: 30px;
+		}
+	}
+}

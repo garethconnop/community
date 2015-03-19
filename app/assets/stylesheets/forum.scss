@@ -36,6 +36,7 @@
     .button {
     	display: inline-block;
       margin-top: 30px;
+      margin-bottom: 0;
     }
   }
 }
@@ -195,6 +196,7 @@
 					}
 
 		      h2 {
+		      	 margin-top: -10px;
 
 		      	a {
 
@@ -208,7 +210,8 @@
 		      	color: #AAA;
 		      	letter-spacing: .03em;
 		      	line-height: 1.5;
-            margin-top: 5px;
+            margin-top: -2px;
+            margin-bottom: 30px;
 
 		      	strong {
 		      		color: #999;
@@ -423,6 +426,10 @@
 
 			    @media only screen and (min-width: 1025px) {
 						width: 88.5%;
+					}
+
+					h1 {
+						margin-top: -11px;
 					}
 
 					p.meta {
