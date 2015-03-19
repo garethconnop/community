@@ -1,0 +1,40 @@
+.pagination a, .pagination .previous_page, .pagination .current, .pagination .next_page {
+  padding: 0 .6em;
+  line-height: 20px;
+  text-decoration: none;
+  background-color: #ffffff;
+  font-weight: 700;
+  letter-spacing: 3px;
+  font-size: 1em;
+  font-style: normal;
+  color: #AAA;
+
+  &:hover, &:focus {
+    color: #888;
+  }
+}
+
+.pagination {
+  text-align: center;
+  margin: 30px 0 10px;
+
+  .previous_page {
+    float: left;
+    padding-left: 0;
+    font-size: 1.1em;
+  }
+
+  .disabled {
+    color: #DDD;
+  }
+
+  .current {
+    color: $primary-color;
+  }
+
+  .next_page {
+    float: right;
+    padding-right: 0;
+    font-size: 1.1em;
+  }
+}
