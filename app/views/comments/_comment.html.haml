@@ -15,12 +15,11 @@
     %div.post-body-text
       = markdown(comment.comment).html_safe
 
-    %div.edit-container
-
-      - if comment.user == current_user || current_user.try(:admin?)
+    - if comment.user == current_user || current_user.try(:admin?)
+      %div.edit-container
         = link_to "Edit", edit_post_comment_path(comment.post, comment), :class => 'edit'
-
-      - if current_user.try(:admin?)
-        = link_to " Delete", [comment.post, comment], method: :delete, data: { confirm: "Are you sure?" }, :class => 'delete'
+      
+        - if current_user.try(:admin?)
+          = link_to " Delete", [comment.post, comment], method: :delete, data: { confirm: "Are you sure?" }, :class => 'delete'
 
 %hr
