@@ -134,7 +134,7 @@ header {
         a {
           font-size: 1.75em;
           font-weight: 900;
-          text-transform: lowercase;
+          text-transform: capitalize;
           color: #FFF;
           display: inline-block;
           padding: 5px 0;
@@ -148,7 +148,6 @@ header {
             margin-left: 30px;
             display: inline;
             padding: 0;
-            text-transform: capitalize;
             letter-spacing: 1px;
             font-weight: 900;
             font-size: 1.2em;
