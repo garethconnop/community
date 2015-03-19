@@ -1,20 +1,21 @@
 /*tools*/
 @import "bourbon";
 @import "neat";
-@import "normalize";
-@import "fonts";
-@import "icon-font";
+@import "global/normalize";
+@import "global/fonts";
+@import "global/icon-font";
 
 /*base*/
-@import "grid";
-@import "vars";
-@import "base";
+@import "global/grid";
+@import "global/vars";
+@import "global/base";
 
 /*modules*/
-@import "header";
-@import "footer";
-@import "alerts";
-@import "forms";
+@import "global/header";
+@import "global/footer";
+@import "global/alerts";
+@import "global/forms";
+@import "global/pagination";
 
 /*pages*/
-@import "forum";
+@import "forum/forum";
