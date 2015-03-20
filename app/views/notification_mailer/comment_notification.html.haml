@@ -1,0 +1,22 @@
+%header{style: "width: 100%; background: #4444FF; background-image: -webkit-linear-gradient(left, #5A5AFF, #0000DA); background-image: linear-gradient(to right,#5A5AFF, #0000DA); border-bottom: 1px solid rgba(0, 0, 0, 0.1); height: 65px; text-align: center;"}
+  = link_to(image_tag("logo.svg", style: "width: 40px; height: 47px; margin: 9px 0 0;"), root_url)
+  %h1{style: "font-weight: 400; color: #FFF; letter-spacing: 3px; margin: 0; font-size: 24px;"}
+    New Reply
+
+%div.container{style: "width: 90%; max-width: 900px; text-align: center; margin: 50px auto 0;"}
+
+  %p{style: "font-weight: 300; color: #9395B9; letter-spacing: 0.02em; margin: 0; padding: 0;"}
+    Hey
+    = succeed ',' do
+      = @user.username
+    there is a new reply in
+    = succeed '.' do
+      = link_to @comment.post.title, post_url(@comment.post, anchor: dom_id(@comment)), :style => "color: #5A5AFF; letter-spacing: 1px; font-weight: 400;"
+    Click the button below to view the reply on the Conditioning Centre's Community site.
+
+  %span{style: "display: block;"}
+    = link_to "View Reply", post_url(@comment.post, anchor: dom_id(@comment)),{style: "margin: 40px 0 50px; padding: 13px 30px; background: #5A5AFF; outline: none; border: none; border-radius: 24px; -webkit-appearance: none; font-size: 14px; line-height: 1.6; text-decoration: none; font-weight: 500; color: #FFF; text-align: center; letter-spacing: 2px; text-transform: uppercase; -webkit-transition: 0.4s ease; -moz-transition: 0.4s ease; transition: 0.4s ease; display: inline-block;"}
+
+/ font-weight: 400;
+/ letter-spacing: 1px;
+/ color: #5a5aff;

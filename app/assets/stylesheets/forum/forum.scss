@@ -63,6 +63,7 @@
 .no-posts {
 	margin: 10px 0 30px;;
 	font-size: 1.2em;
+	color: #9395B9;
 }
 
 .forum-content {
@@ -120,14 +121,14 @@
 		      }
 
 		      p {
-		      	color: #AAA;
+		      	color: #9395B9;
 		      	letter-spacing: .03em;
 		      	line-height: 1.5;
             margin-top: -2px;
             margin-bottom: 30px;
 
 		      	strong {
-		      		color: #999;
+		      		color: #9395B9;
 		      		letter-spacing: .06em;
 		      	}
 
@@ -147,7 +148,7 @@
 						margin: -5px 0 0;
 					  font-size: 1.5em;
 					  font-weight: 700;
-					  color: #888;
+					  color: #4D5685;
 
 					  @media only screen and (min-width: 768px) {
 		      	  font-size: 1.7em;
@@ -157,7 +158,7 @@
 							margin: -8px 0 0;
 						  font-size: .42em;
 						  font-weight: 400;
-						  color: #AAA;
+						  color: #9395B9;
 
 						  @media only screen and (min-width: 539px) {
 		      	    font-size: .5em;
@@ -208,7 +209,7 @@
 
       a {
       	font-size: 1.5em;
-      	color: #666;
+      	color: #4D5685;
       	letter-spacing: 1px;
       }
 
@@ -233,12 +234,12 @@
 
 .back, .edit, .delete {
 	font-size: 1.1em;
-	color: #AAA;
+	color: #CCC;
 	font-weight: 700;
 	letter-spacing: 3px;
 
 	&:hover, &:focus {
-		color: #888;
+		color: #AAA;
   }
 }
 
@@ -250,7 +251,7 @@
 		display: none;
 		font-size: 13px;
 		margin-right: 4px;
-		color: #AAA;
+		color: #CCC;
 
 		@media only screen and (min-width: 375px) {
 			display: inline;
@@ -265,14 +266,14 @@
 
 		&:before {
 			content: "|";
-			color: #AAA;
+			color: #CCC;
 		}
 	}
 }
 
 .post-body-text {
   font-size: 1.2em;
-  color: #999;
+  color: #9395B9;
 
   p {
 
@@ -366,13 +367,13 @@
 					}
 
 					p.meta {
-						color: #AAA;
+						color: #9395B9;
 		      	letter-spacing: .03em;
 		      	line-height: 1.5;
 	            margin: -5px 0 40px;
 
 		      	strong {
-		      		color: #999;
+		      		color: #9395B9;
 		      		letter-spacing: .06em;
 		      	}
 
@@ -408,13 +409,13 @@
             .username {
 							margin: -5px 0 0;
 						  font-size: 1.5em;
-						  color: #666;
+						  color: #4D5685;
 						  font-size: 1.3em;
 						  letter-spacing: 2px;
 						}
 
 						.date {
-							color: #AAA;
+							color: #9395B9;
 							margin: -2px 0 40px;
 						}
 
@@ -441,7 +442,7 @@
       	p {
       		margin: -10px 0 0;
       		font-size: 1.2em;
-      		color: #999;
+      		color: #9395B9;
       	}
 
       	.reply-buttons-container {

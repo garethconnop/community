@@ -22,7 +22,7 @@
 
       %div.avatar-input
         = f.label :avatar, :class => 'avatar-label'
-        = f.input_field :avatar
+        = f.input_field :avatar, :class => 'file-input'
 
       - if devise_mapping.confirmable? && resource.pending_reconfirmation?
         %p

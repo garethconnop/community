@@ -1,9 +1,9 @@
-$primary-color: #4444FF;
-$headline-color: #777;
-$text-color: #999;
+$primary-color: #5A5AFF;
 $accent-color: darken($primary-color, 25%);
+$headline-color: #4D5685;
+$text-color: #999;
 $button-hover: darken($primary-color, 15%);
-$link-color: #0E5BE2;
+$link-color: $primary-color;
 $link-color-hover: darken($link-color, 10%);
 $selection-color: #EEE;
 $duration: .4s;

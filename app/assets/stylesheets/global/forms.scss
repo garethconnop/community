@@ -30,14 +30,16 @@
 
       h2 {
         margin: 0;
-        font-size: 1.5em;
+        font-size: 1.3em;
+        color: #AAA;
       }
 
       ul {
+        margin-top: 0;
         margin-bottom: 40px;
 
         li {
-          color: #777;
+          color: #AAA;
         }
       }
     }
@@ -64,6 +66,27 @@
       .avatar-label {
         display: block;
       }
+
+      .file-input::-webkit-file-upload-button {
+        background: $primary-color;
+        border: none;
+        border-radius: 14px;
+        outline: none;
+        white-space: nowrap;
+        -webkit-user-select: none;
+        cursor: pointer;
+        font-weight: 700;
+        font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: .9em;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        padding: 5px 11px;
+        color: #FFF;
+
+        &:hover, &:focus, &:active {
+          background: $button-hover;
+        }
+      }
     }
 
     .remember-me {
@@ -71,11 +94,11 @@
     }
 
     a {
-    	color: #AAA;
+    	color: #4D5685;
     	text-decoration: underline;
 
     	&:hover, &:focus {
-    		color: $link-color
+    		color: #4D5685;
     	} 
     }
   
@@ -110,7 +133,7 @@
 
 		    select {
 		    	width: 100%;
-		    	color: #777;
+		    	color: #AAA;
 		    }
 			}
 		}

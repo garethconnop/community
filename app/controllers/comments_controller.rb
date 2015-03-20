@@ -6,6 +6,9 @@ class CommentsController < ApplicationController
     @comment.save
 
   	if @comment.save
+      # For notifications
+      @comment.send_notifications!
+      
       redirect_to post_path(@post, anchor: "comment_#{@comment.id}")
   	else
   	  redirect_to post_path(@post), alert: 'Unable to save your post.'
