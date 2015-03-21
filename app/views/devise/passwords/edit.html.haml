@@ -1,0 +1,18 @@
+%div.container.form-container
+  %div.eight
+    %h2 Change your password
+
+    = simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f|
+      = devise_error_messages!
+
+      = f.input :reset_password_token, as: :hidden
+      = f.full_error :reset_password_token
+
+      %div.edit-password
+        = f.input :password, label: "New password", required: false, autofocus: true, error: false, wrapper: false
+        = f.input :password_confirmation, label: "Confirm your new password", required: false, error: false, wrapper: false
+      
+      = f.submit "Change my password"
+
+    %div.form-links
+      = link_to "Sign up", join_path

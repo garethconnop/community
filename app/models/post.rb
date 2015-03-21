@@ -7,5 +7,5 @@ class Post < ActiveRecord::Base
   has_many :users, through: :comments
 
   validates :title, :content, :category_id, presence: true
-  validates :title, length: {minimum: 5}
+  validates :title, length: {minimum: 5, maximum: 100}
 end

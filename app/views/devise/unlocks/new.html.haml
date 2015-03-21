@@ -1,0 +1,16 @@
+%div.container.form-container
+  %div.eight
+    %h2 Resend unlock instructions
+
+		= simple_form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f|
+		  = devise_error_messages!
+
+		  = f.full_error :unlock_token
+
+      %div.edit-password
+		    = f.input :email, required: true, autofocus: true, error: false, wrapper: false
+
+		  = f.submit "Resend unlock instructions"
+
+		%div.form-links
+      = link_to "Sign up", join_path

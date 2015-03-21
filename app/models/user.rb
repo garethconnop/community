@@ -19,7 +19,7 @@ class User < ActiveRecord::Base
     end
   end
 
-  validates :username, presence: true, uniqueness: { case_sensitive: false}
+  validates :username, presence: true, length: {maximum: 24}, uniqueness: { case_sensitive: false }, format: { with: /\A[a-zA-Z0-9]*\z/, message: "can only contain letters and numbers, and be a maximum of 24 characters." }
 
   #Avatar
   has_attached_file :avatar, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: ":style/user.jpg"

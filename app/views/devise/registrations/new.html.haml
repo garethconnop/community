@@ -1,15 +1,14 @@
 %div.container.form-container
   %div.eight
-
     %h2 Sign up
 
-    = simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+    = simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { novalidate: true }) do |f|
       = devise_error_messages!
 
       = f.label :username, required: false
       = f.text_field :username, autofocus: true
 
-      = f.label :email
+      = f.label :email, :novalidate => "novalidate"
       = f.email_field :email
 
       = f.label :password

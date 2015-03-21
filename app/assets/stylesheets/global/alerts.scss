@@ -2,22 +2,22 @@
 	position:absolute;
 	width:100%;
 	top: 0;
-	background:rgba(68,68,255,0.8);
-	border-bottom: 4px solid rgba(255,255,255,.1);
+	background:rgba(68,68,255,0.9);
 	z-index:3;
 
 	p {
 		text-align:center;
 		color:#FFF;
-		padding: 20px 15px;
+		padding: 9px 15px;
 		margin: 0;
 		text-transform:capitalize;
 		letter-spacing:2px;
-		font-size: 2em;
+		font-size: 1.5em;
 		font-weight:500;
 
 		@media only screen and (min-width: 1025px) {
-		    padding: 26px 15px;
+		    padding: 14px 15px;
+		    font-size: 1.7em;
 	    }
 	}
 }

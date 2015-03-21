@@ -60,6 +60,20 @@
       }
     }
 
+    .forgot-password {
+
+      input[type=email] {
+        margin-bottom: 0; 
+      }
+    }
+
+    .edit-password {
+
+      input:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+
     .avatar-input {
       margin-bottom: 20px;
 
@@ -68,24 +82,20 @@
       }
 
       .file-input::-webkit-file-upload-button {
-        background: $primary-color;
-        border: none;
-        border-radius: 14px;
+        background: #FFF;
+        border: 1px solid #CCC;
+        border-radius: 4px;
         outline: none;
         white-space: nowrap;
         -webkit-user-select: none;
         cursor: pointer;
-        font-weight: 700;
+        font-weight: 500;
         font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
         font-size: .9em;
         text-transform: uppercase;
         letter-spacing: 0.1em;
         padding: 5px 11px;
-        color: #FFF;
-
-        &:hover, &:focus, &:active {
-          background: $button-hover;
-        }
+        color: #999;
       }
     }
 

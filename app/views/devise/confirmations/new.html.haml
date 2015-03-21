@@ -1,0 +1,16 @@
+%div.container.form-container
+  %div.eight
+    %h2 Resend confirmation instructions
+
+		= simple_form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f|
+		  = devise_error_messages!
+
+		  = f.full_error :confirmation_token
+
+      %div.edit-password
+		    = f.input :email, required: false, autofocus: true, error: false, wrapper: false
+
+		  = f.submit "Resend confirmation instructions"
+
+		%div.form-links
+      = link_to "Sign up", join_path
