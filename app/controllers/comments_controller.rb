@@ -25,7 +25,7 @@ class CommentsController < ApplicationController
   	@comment = @post.comments.find(params[:id])
 
   	if @comment.update(params[:comment].permit(:comment))
-  	  redirect_to post_path(@post)
+  	  redirect_to post_path(@post, anchor: "comment_#{@comment.id}")
   	else
   	  render 'edit'
   	end
