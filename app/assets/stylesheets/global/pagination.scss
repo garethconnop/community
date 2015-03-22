@@ -2,15 +2,15 @@
   padding: 0 .6em;
   line-height: 20px;
   text-decoration: none;
-  background-color: #ffffff;
+  background-color: #FFF;
   font-weight: 700;
   letter-spacing: 3px;
   font-size: 1em;
   font-style: normal;
-  color: #AAA;
+  color: #BBB;
 
   &:hover, &:focus {
-    color: #888;
+    color: #AAA;
   }
 }
 
@@ -26,10 +26,18 @@
 
   .disabled {
     color: #DDD;
+
+    &:hover {
+      color: #DDD;
+    }
   }
 
   .current {
     color: $primary-color;
+
+    &:hover, &:focus {
+      color: $primary-color;
+    }
   }
 
   .next_page {
